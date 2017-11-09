@@ -1,0 +1,55 @@
+Feature: Xora
+
+
+Scenario:Trips
+  
+  	 Then I touch menu icon "Trips"
+  	 Then I wait for 5 seconds
+
+Scenario:Trips: Start Trip
+
+      Then I see the text "Start Trip"
+      Then I should see "Start" unchecked
+      Then I enter "123.2" into input field number 1
+      Then I should see "Start" checked
+      Then I toggle checkbox number 1
+      Then I select spinner by id "mileage_starttrip_category"
+      Then I touch the "Charitable" text
+      Then I wait for 1 seconds
+      Then I select spinner by id "mileage_starttrip_purpose"
+      Then I touch the "Delivery" text
+      Then I wait for 1 seconds
+      Then I enter "text on starttrip" into input field number 2
+      Then I press "Start"
+      Then I wait for 2 seconds
+    
+  Scenario:End Trip
+    
+  	  Then I see the text "End Trip"
+  	  Then I enter "132.1" into input field number 1 
+  	  Then I enter "123" into input field number 3
+  	  Then I enter " extended on endtrip" into input field number 4
+    Then I press "End"
+  
+  Scenario:TripList  
+  	Then I see the text "Today"
+  	Then I see the text "8.9 mi"
+  	Then I see the text "2.48"
+  		
+  	
+  
+  Scenario:TripDetails  
+  	Then I press "Today"
+  	Then I wait for 2 seconds
+  	Then I see the text "Today"
+  	Then I see the text "8.9 mi"
+  	Then I see the text "2.48"
+  	Then I see the text "Charitable"
+  	Then I see the text "Delivery"
+  	Then I see the text "123.2"
+  	Then I see the text "132.1"
+  	Then I see the text "text on starttrip extended on endtrip"
+  	Then I go back
+  	Then I press "Current Trip"
+	Then I go back
+  

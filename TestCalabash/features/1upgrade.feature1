@@ -1,0 +1,102 @@
+Feature: Xora
+  @need_restart 
+  Scenario: Login: SetBridgeurl
+   
+  Given my app is running
+  Given I login with phno 9996707006 to envi "http://alpha-bridge.xora.com/bridge/DeviceBridgeServlet"
+  Then I accept EULA
+  Then I accept Warning
+  Then I wait for 5 seconds  
+
+Scenario: Login: Airplane Mode On
+
+	Then I set Airplanemode
+	#Then I go back
+	And I wait for "Settings" to appear
+Then I wait for 5 seconds 
+
+Scenario:TimeSheets  
+     Then I perform timesheet actions
+    
+Scenario: Jobs
+	Then I createAndperform job actions
+
+Scenario: Fill Trips if any
+	Then I press image button number 1
+	Then I fill Trips if available
+
+Scenario: Settings:Device Options
+     Then I touch menu icon "Settings"
+      
+Scenario: Settings:Send Current Location      
+      Then I press "Send Current Location"
+      Then I press "Yes" if popup available
+            
+Scenario: Settings:Send Logs to server      
+      Then I press "Send Log to Server"
+      Then I press "Yes" if popup available
+      Then I go back
+
+Scenario: Submit a Form
+	Then I press image button number 1
+	Then I submit 1 Forms
+
+Scenario: Exit
+	Then I press image button number 1
+	Then I press image button number 2
+	Then I wait for 5 seconds
+	Then I touch menu icon "Exit"
+    	Then I press "Yes" 
+
+Scenario:Upgrade
+	Then I install newapp "TimeTrack_ATT.apk"
+	
+
+@need_restart             
+Scenario:Relaunch
+	Then I press image button number 1
+	Then I wait for 2 seconds           
+	Then I press image button number 2
+	Then I wait for 2 seconds
+Scenario: Login: Airplane Mode OFF
+	Then I set Airplanemode
+	#Then I go back
+	And I wait for "Settings" to appear 	
+        Then I wait for 3 seconds
+        Then I press image button number 2
+        
+	Then I should wait 240 for Dialog "New Updates" to appear
+        Then I should see the Dialog "New Updates" and handle it
+
+#Scenario: Create Multiple Jobs
+	
+#	Then I touch menu icon "Jobs"
+#	Then I create 3 jobs 
+#	Then I go back
+
+Scenario: Jobs
+	Then I createAndperform job actions
+
+Scenario: Fill Trips if any	
+	Then I press image button number 1
+	Then I fill opentrips if available
+	
+Scenario:Trips
+  
+  	 Then I touch menu icon "Trips"
+  	 Then I wait for 5 seconds
+
+Scenario: Fill Trips if icon available
+	Then I perform Trips if available
+	
+Scenario: Submit Form
+	Then I press image button number 1
+	Then I submit 1 Forms	
+  	
+
+Scenario: Exit
+	Then I press image button number 1
+	Then I press image button number 2
+	Then I wait for 60 seconds
+	Then I touch menu icon "Exit"
+    	Then I press "Yes"  

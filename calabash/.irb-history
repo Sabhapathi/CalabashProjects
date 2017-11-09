@@ -1,0 +1,50 @@
+scroll_up
+swipe(:left)
+flick
+flick_up
+flick_down
+swipe(:right)
+perform_action('swipe','right')
+perform_action('swipe','left')
+flick_down
+flick_up
+back
+perform_action('swipe','left')
+back
+flash("button marked:'Next'")
+flash("button marked:'Submit'")
+keyboard_enter_text("hello automation")
+tap_keyboard_delete_key
+tap_keyboard_delete_key
+query(* marked:'Tap to capture one or more pictures')
+query("* marked:'Tap to capture one or more pictures'")
+flash("* marked:'Tap to capture one or more pictures'")
+touch("* marked:'Tap to capture one or more pictures'")
+%x(adb shell input keyevent 66)
+touch("* marked:'Tap to capture one or more pictures'")
+%x(adb shell input keyevent 66)
+%x(adb shell input keyevent 19)
+%x(adb shell input keyevent 21)
+%x(adb shell input keyevent 22)
+%x(adb shell input keyevent 66)
+%x(adb shell input keyevent 66)
+flash("button marked:'Ok'")
+flash("button marked:'Ok'")
+flash("button marked:'Next'")
+touch("button marked:'Next'")
+touch("* marked:'Tap to capture one or more pictures'")
+%x(adb shell input keyevent 66)
+%x(adb shell input keyevent 21)
+%x(adb shell input keyevent 22)
+%x(adb shell input keyevent 66)
+touch("button marked:'Ok'")
+touch("button marked:'Ok'")
+touch("button marked:'Next'")
+exit
+start_test_server_in_background
+touch("* marked:'Tap to capture one or more pictures'")
+%x(adb shell input keyevent 66)
+%x(adb shell input keyevent 21)
+%x(adb shell input keyevent 22)
+%x(adb shell input keyevent 66)
+exit

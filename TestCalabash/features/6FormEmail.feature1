@@ -1,0 +1,101 @@
+  Feature: Xora
+  
+  
+Scenario: Forms:Sync First
+  
+	Then I press image button number 1
+        Then I wait for 2 seconds 	
+        Then I press image button number 2
+        Then I wait for 2 seconds 	
+        Then I press image button number 3
+        Then I wait for 2 seconds 
+Scenario: Forms:FormList    
+        Then I touch menu icon "Forms"
+        Then I see the text "AutomationForm"
+	          
+Scenario: Forms:FormDetails      
+        Then I press "AutomationForm"
+        Then I press "Submit"
+        Then I see the text "Email Form"
+
+#Scenario: EmailForms:Verify Send is disabled
+         Then I should see "Send" isnotEnabled
+        Then I enter text using adb "tt"
+        Then I select textview by id "email"
+Scenario: EmailForms:Verify Send is Enabled        
+        Then I should see "Send" Enabled
+        Then I press "Send"
+        Then I press "Ok"
+        Then I send key event using adb "67" # 67 is key event code for Del
+Scenario: EmailForms:Verify selecting invalid email id from contact list
+        Then I enter text using adb "testi"
+	Then I select textview by id "email"
+Scenario: EmailForms:Verify error message Invalid Email Address
+	Then I press "Send"
+	Then I press "Ok"
+Scenario: EmailForms:Verify Deleting email id
+        Then I send key event using adb "67" # 67 is key event code for Del
+Scenario: EmailForms:Verify entering valid email ids                
+        Then I enter text using adb "a@a.in"
+        #Then I touch the view "EmailContactTextView"
+        Then I make "EmailContactTextView" field Focused
+        Then I send key event using adb "62" # 62 is key event code for space
+        Then I enter text using adb "b@b.in"
+        #Then I touch the view "EmailContactTextView"
+        Then I make "EmailContactTextView" field Focused
+        Then I send key event using adb "74" # 74 is key event code for semi collon
+       Then I enter text using adb "a3@a.com"
+       Then I send key event using adb "55" # 55 is key event code for comma
+       Then I make "EmailContactTextView" field Focused
+       Then I enter text using adb "abc123@a.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "niceandsimple@example.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "very.common@example.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "a.little.lengthy.but.fine@dept.example.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "disposable.style.email.with+symbol@example.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "other.email-with-dash@example.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "d.j@server1.proseware.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "jones@ms1.proseware.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "j@proseware.com9"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "j.s@server1.proseware.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "j..s@proseware.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "j.@server1.proseware.com"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "js@proseware.com9"
+	Then I send key event using adb "55" # 55 is key event code for comma
+	Then I make "EmailContactTextView" field Focused
+		
+Scenario: EmailForms:Verify selecting valid email id
+	Then I make "EmailContactTextView" field Focused
+	Then I enter text using adb "info@j"
+        Then I select textview by id "email"
+        Then I should see "Send" Enabled
+Scenario: EmailForms:Verify sending email form        
+        Then I press "Send"
+        
+        Then I wait for 10 seconds
+               
+        Then I go back
+  

@@ -1,0 +1,22 @@
+  Feature: Xora
+  
+  Scenario: Exit:Sync first
+  
+    Then I press image button number 1
+    Then I wait for 2 seconds 	
+    Then I press image button number 2
+    Then I wait for 2 seconds 	
+    Then I press image button number 3
+    Then I wait for 2 seconds 
+    
+    Then I press image button number 2
+    Then I press image button number 2
+    Then I wait for 2 seconds
+ 
+ Scenario: Exit   
+    Then I touch menu icon "Exit"
+    Then I press "Yes"
+       
+ Scenario: Exit
+ 
+  

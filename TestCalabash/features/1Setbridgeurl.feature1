@@ -1,0 +1,65 @@
+Feature: Xora
+  @need_restart
+  Scenario: Login:SetBridgeurl 
+  Given my app is running
+  Then I wait for 5 seconds
+  And I wait for "Activate Device" to appear
+  Then I press "Activate"
+  Then I clear input field number 1
+  Then I enter "http://alpha-cobra.ntt.xora.com:8092/bridge/DeviceBridgeServlet" into input field number 1
+  Then I wait for 2 seconds
+  Then I press "Update"
+  Then I wait for 2 seconds
+  Then I clear input field number 1
+  Then I wait for 2 seconds
+    
+  
+  
+  Then I enter "9996707006" into input field number 1
+  Then I press "Activate"
+  
+  Then I wait for 10 seconds
+  And I wait for "EULA" to appear
+  Then I wait for 2 seconds
+  Then I press "I Agree"
+        
+ Scenario: Login: Verify Warning            
+       And I wait for "Warning" to appear
+       Then I see the text "Warning"
+              
+  Then I see the text "Xora"
+  Then I press "Ok"
+  Then I should wait 25 for Dialog "New Updates" to appear
+  Then I should see the Dialog "New Updates" and handle it
+  
+
+	  
+Scenario: Login: Location Services OFF
+	  Then I disable Locationservices
+	  #Then I go back
+  	  And I wait for "Settings" to appear 
+Then I wait for 60 seconds 
+
+
+ 	  
+  	  
+
+Scenario: Login: Location Services ON
+  Then I enable Locationservices
+  #Then I go back
+  And I wait for "Settings" to appear 
+  
+  Then I wait for 120 seconds
+
+Then I press image button number 2  
+  Then I wait for 10 seconds       
+            
+            
+            
+  
+      
+    
+
+
+
+  

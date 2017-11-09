@@ -1,0 +1,9 @@
+query("*")
+touch("edittext")
+keyboard_enter_text("9999900101")
+exit
+exit
+query("button")
+touch("button", "marked:'Actiate'")
+touch("button", marked:"Activate")
+exit

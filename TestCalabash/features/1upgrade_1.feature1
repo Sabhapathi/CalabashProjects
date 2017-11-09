@@ -1,0 +1,66 @@
+Feature: Xora
+  @need_restart
+  Scenario: Login: SetBridgeurl
+   
+  Given my app is running
+  
+  Given I login with phno 9999900101 to envi "http://bridgeprod.etrace.com/bridge/DeviceBridgeServlet"
+  Then I accept EULA
+  Then I accept Warning
+  Then I wait for 5 seconds  
+
+Scenario: Login: Airplane Mode On
+	Then I set Airplanemode
+	#Then I go back
+	And I wait for "Settings" to appear
+Then I wait for 5 seconds 
+
+
+Scenario: Submit a Form
+	Then I press image button number 1
+	Then I submit 1 Forms
+
+Scenario: Exit
+	Then I press image button number 1
+	Then I press image button number 2
+	Then I wait for 5 seconds
+	Then I touch menu icon "Exit"
+    	Then I press "Yes" 
+
+Scenario:Upgrade
+	Then I install newapp "TimeTrack_ATT.apk"  
+
+@need_restart             
+Scenario:Relaunch
+	Then I press image button number 1
+	Then I wait for 2 seconds           
+	Then I press image button number 2
+	Then I wait for 2 seconds
+Scenario: Login: Airplane Mode OFF
+	Then I set Airplanemode
+	#Then I go back
+	And I wait for "Settings" to appear 	
+        Then I wait for 3 seconds
+        Then I press image button number 2
+        
+	Then I should wait 240 for Dialog "New Updates" to appear
+        Then I should see the Dialog "New Updates" and handle it
+
+#Scenario: Create Multiple Jobs
+	
+#	Then I touch menu icon "Jobs"
+#	Then I create 3 jobs 
+#	Then I go back
+
+
+Scenario: Submit Form
+	Then I press image button number 1
+	Then I submit 1 Forms	
+  	
+
+Scenario: Exit
+	Then I press image button number 1
+	Then I press image button number 2
+	Then I wait for 60 seconds
+	Then I touch menu icon "Exit"
+    	Then I press "Yes"  

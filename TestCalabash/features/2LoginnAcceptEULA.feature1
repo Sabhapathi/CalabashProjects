@@ -1,0 +1,74 @@
+Feature: Xora
+	This Feature does
+	Changing Bridge URL
+	Accept EULA
+	Reject EULA
+	Accept Warning
+
+  @need_restart
+  Scenario: Login:SetBridgeurl 
+   
+  Given my app is running
+  
+  Then I wait for 5 seconds
+  And I wait for "Activate Device" to appear
+  Then I enter "999999999" into input field number 1
+  Then I press "Activate"
+  Then I clear input field number 1
+  Then I enter "http://bridgeprod.etrace.com/bridge/DeviceBridgeServlet" into input field number 1
+  Then I wait for 3 seconds
+  Then I press "Update"
+  Then I wait for 3 seconds
+  Then I clear input field number 1
+  Then I wait for 3 seconds
+   
+  Then I enter "9999900101" into input field number 1
+  Then I press "Activate"
+
+  Scenario: Login: Verify EULA
+  
+     And I wait for "EULA" to appear
+     Then I wait for 1 seconds
+     Then I see the text "MISCELLANEOUS"
+     Then I scroll down
+     Then I scroll down
+     
+     Then I wait for 2 seconds
+      
+Scenario: Login: Decline EULA      
+     Then I press "I Decline"
+     Then I wait for 20 seconds
+      
+      @need_restart
+Scenario: Login: Accept EULA 
+     And I wait for "Activate Device" to appear
+     Then I enter "999999999" into input field number 1
+     Then I press "Activate"
+     Then I clear input field number 1
+     Then I enter "http://bridgeprod.etrace.com/bridge/DeviceBridgeServlet" into input field number 1
+     Then I wait for 3 seconds
+     Then I press "Update"
+     Then I wait for 3 seconds
+     Then I clear input field number 1
+     Then I wait for 3 seconds
+     Then I enter "9999900101" into input field number 1
+     Then I press "Activate"
+     Then I wait for 10 seconds
+     And I wait for "EULA" to appear
+     Then I wait for 1 seconds
+     Then I wait for 2 seconds
+     Then I press "I Agree"
+      
+Scenario: Login: Verify Warning            
+     And I wait for "Warning" to appear
+     Then I see the text "Warning"
+     Then I see the text "Xora"
+     Then I press "Ok"
+     Then I should wait 25 for Dialog "New Updates" to appear
+     Then I should see the Dialog "New Updates" and handle it
+     And I wait for "Settings" to appear
+             
+    
+      
+      
+  

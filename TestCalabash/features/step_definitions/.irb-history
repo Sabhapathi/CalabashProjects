@@ -1,0 +1,50 @@
+performAction('scroll_down')
+performAction('scroll_up')
+performAction('scroll_down')
+performAction('scroll_up')
+performAction('drag',100,150,100,150,5)
+performAction('drag',100,150,100,150,5)
+performAction('drag',100,150,100,150,5)
+performAction('drag',100,150,100,150,5)
+performAction('drag',80,80,60,90,10)
+performAction('drag',80,80,60,90,10)
+performAction('drag',80,80,60,90,10)
+performAction('drag',80,80,60,100,10)
+performAction('drag',80,80,100,60,10)
+performAction('drag',80,80,100,60,10)
+performAction('drag',80,80,60,40,10)
+performAction('drag',80,80,60,40,10)
+performAction('drag',80,80,60,40,10)
+performAction('drag',80,80,60,30,10)
+performAction('drag',80,80,60,30,10)
+performAction('drag',80,80,60,100,10)
+query("TextView", :getText)
+(1..10).find_all {|i| i%3 ==0 }
+cls
+exit
+start_test_server_in_background
+exit
+reinstall_apps
+reinstall_apps
+reinstall_apps
+start_test_server_in_background
+exit
+start_test_server_in_background
+touch("spinner")
+exit
+exit
+start_test_server_in_background
+query("*")
+query("TextView")
+query("*")
+query("EditText")
+touch("EditText")
+FileUtils.cd "C:\\Users\\sabhap\\features\\step_definitions"
+load 'libxora.rb'
+iteratephonenum
+iteratephonenum()
+gem uninstall rubyXL
+iteratephonenum()
+iteratephonenum()
+iteratephonenum
+exit

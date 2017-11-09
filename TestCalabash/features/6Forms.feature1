@@ -1,0 +1,128 @@
+  Feature: Xora
+  
+  
+Scenario: Forms:Sync First
+  
+	Then I press image button number 1
+        Then I wait for 2 seconds 	
+        Then I press image button number 2
+        Then I wait for 2 seconds 	
+        Then I press image button number 3
+        Then I wait for 2 seconds 
+Scenario: Forms:FormList    
+        Then I touch menu icon "Forms"
+        Then I see the text "AutomationForm"
+	          
+Scenario: Forms:FormDetails      
+        Then I press "AutomationForm"
+        
+       
+Scenario: Forms: Fill the form
+        Then I see the text "AutomationForm"
+        
+		        
+Scenario: Forms: Form Text field
+        Then I enter "Text" into input field number 1
+        Then I press "Next"
+        
+        
+Scenario: Forms: Form Numeric field
+        Then I enter "12345" into input field number 2
+        Then I press "Next"        
+
+Scenario: Forms: Form Odometer field
+        Then I enter "00000" into input field number 3
+        Then I press "Next"
+
+Scenario: Forms: Form Numeric precision 1
+        Then I enter "00.1" into input field number 4
+        Then I press "Next"
+
+Scenario: Forms: Form Numeric precision 2
+        Then I enter "123.12" into input field number 5
+        Then I press "Next"
+
+Scenario: Forms: Form Numeric precision 8
+        Then I enter "12312345.123456789" into input field number 6
+        Then I press "Next"
+
+#Scenario: Forms: Form Select List
+#        Then I select spinner item "SelectList"
+#        Then I touch the "a" text
+#        Then I press "Next"
+
+Scenario: Forms:Form Multi Select
+        Then I select multiselect "MultiSelect field"
+        Then I press "Ok"
+        Then I press "Next"
+	    Then I scroll up
+	    
+Scenario: Forms: Form Picture field
+        Then I press "Tap to capture one or more pictures"
+        Then I wait for 10 seconds 
+        Then I capture picture
+        Then I wait for 5 seconds 
+        Then I save picture
+        Then I wait for 3 seconds 
+        Then I press "Ok"  
+        
+         Then I press "Tap to capture one or more pictures"
+	 Then I wait for 10 seconds 
+	 Then I capture picture
+	 Then I wait for 5 seconds 
+	 Then I save picture
+	 Then I wait for 3 seconds 
+	 Then I press "Ok"        
+                
+         Then I press "Tap to capture one or more pictures"
+	 Then I wait for 10 seconds 
+	 Then I capture picture
+	 Then I wait for 5 seconds 
+	 Then I save picture
+	 Then I wait for 3 seconds 
+	 Then I press "Ok"        
+        
+
+Scenario: Forms: Form Signature field
+        Then I press "Tap to capture one or more signatures"
+        Then I swipe left
+        Then I swipe right
+        Then I press "Save"
+        Then I scroll up
+        Then I press "Tap to capture one or more signatures"
+        Then I swipe left
+        Then I swipe right
+        Then I press "Save"
+        Then I scroll up
+        Then I press "Tap to capture one or more signatures"
+        Then I swipe left
+        Then I swipe right
+        Then I press "Save"
+
+Scenario: Forms: Form Date Field
+        Then I press "08-Oct-2012"
+        Then I press "Set"
+
+Scenario: Forms: Form Time Field
+        Then I press "11:45 PM"
+        Then I click on a image button with content description "Increment hour"
+        Then I click on a image button with content description "Increment hour"
+        Then I click on a image button with content description "Decrement hour"
+        Then I click on a image button with content description "Increment minute"
+        Then I click on a image button with content description "Increment minute"
+        Then I click on a image button with content description "Decrement minute"
+        Then I click on a button id "amPm"
+        Then I press "Set"
+
+Scenario: Forms: Form Checkbox
+      Then I toggle checkbox number 1
+
+#Scenario: Forms: CancelFormError
+#      Then I press image button "Close icon X on Forms"
+#      Then I press "No"
+
+Scenario: Forms:SubmitForm
+        Then I press "Submit"
+        Then I press "Skip"
+        Then I go back
+  
